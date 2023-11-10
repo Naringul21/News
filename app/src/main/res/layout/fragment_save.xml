@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.view.SaveFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_app_name_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/baseline_circle_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/news_catcher"
+        android:textAlignment="viewStart"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"/>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recycler_view_save"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:padding="20dp"/>
+
+</LinearLayout>
