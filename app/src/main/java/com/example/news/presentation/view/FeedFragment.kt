@@ -5,30 +5,40 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.news.adapter.NewsAdapter
+import com.example.news.data.local.dao.NewsDatabase
+import com.example.news.data.repository.NewsRepository
 import com.example.news.databinding.FragmentDetailBinding
 import com.example.news.databinding.FragmentFeedBinding
 import com.example.news.presentation.viewmodel.FeedViewModel
 import com.example.news.util.BaseFragment
 import com.example.news.util.Resource
 import com.example.news.util.Resource.Loading
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
-class FeedFragment : BaseFragment<FragmentFeedBinding>(
+@AndroidEntryPoint
+class FeedFragment() : BaseFragment<FragmentFeedBinding>(
     onInflate = FragmentFeedBinding::inflate
 ) {
-    private val viewModel: FeedViewModel by viewModels()
+
+    private val feedViewModel by viewModels<FeedViewModel>()
+
+
     private val newsAdapter by lazy {
         NewsAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setAdapter()
         setViewModelObservers()
         passDataToDetailFragment()
@@ -43,7 +53,7 @@ class FeedFragment : BaseFragment<FragmentFeedBinding>(
     }
 
     private fun setViewModelObservers() {
-        viewModel.newsList.observe(viewLifecycleOwner) { response ->
+        feedViewModel.newsList.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Success -> {
                     progressBarVisibility()

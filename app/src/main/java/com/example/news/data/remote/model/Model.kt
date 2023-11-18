@@ -22,4 +22,4 @@ data class Articles(
 
 data class Source(
     val name: String?
-)
+) :Serializable
