@@ -1,5 +1,6 @@
 package com.example.news.data.remote.model
 
+import com.example.news.data.local.entities.SavedNews
 import java.io.Serializable
 
 
@@ -19,6 +20,8 @@ data class Articles(
     val publishedAt: String?,
     val content: String?
 ): Serializable
+
+fun Articles.toSavedNews()=SavedNews(0,author,content,description,publishedAt,title,url,urlToImage)
 
 data class Source(
     val name: String?

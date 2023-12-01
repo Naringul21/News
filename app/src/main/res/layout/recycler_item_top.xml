@@ -11,7 +11,7 @@
     app:cardCornerRadius="10dp">
 
     <ImageView
-        android:id="@+id/news_media"
+        android:id="@+id/news_media_top"
         android:layout_width="380dp"
         android:layout_height="220dp"
         android:layout_gravity="center"
@@ -19,7 +19,7 @@
         />
 
         <TextView
-            android:id="@+id/news_title"
+            android:id="@+id/news_title_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"

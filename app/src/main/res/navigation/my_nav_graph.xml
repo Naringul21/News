@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_feedFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
     </fragment>
     <fragment
         android:id="@+id/saveFragment"
@@ -25,6 +28,7 @@
         <action
             android:id="@+id/action_saveFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -35,8 +39,16 @@
         <argument
             android:name="article"
             app:argType="com.example.news.data.remote.model.Articles" />
-<!--            app:nullable="true"-->
-<!--            android:defaultValue="@null"-->
+
+
+        <!--        <argument-->
+<!--            android:name="saved_data"-->
+<!--            app:argType="com.example.news.data.local.entities.SavedNews" />-->
 
     </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.news.presentation.view.LanguageFragment"
+        android:label="LanguageFragment"
+        tools:layout="@layout/fragment_language"/>
 </navigation>

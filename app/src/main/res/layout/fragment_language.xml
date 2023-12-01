@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/btn_back"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/baseline_arrow_back_24"
+        android:padding="20dp"
+        android:background="@drawable/circle_button"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:shadowColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/lang_en"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center|left"
+        android:paddingLeft="28dp"
+        android:text="EN"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lang_en"
+        app:layout_constraintHorizontal_bias="0"/>
+    <TextView
+        android:id="@+id/lang_ru"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="RU"
+        android:paddingLeft="28dp"
+        android:textSize="18sp"
+        android:gravity="center|left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lang_en"
+        app:layout_constraintHorizontal_bias="0"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lang_ru"
+        app:layout_constraintHorizontal_bias="0"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

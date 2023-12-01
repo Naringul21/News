@@ -19,7 +19,7 @@
         android:id="@+id/text_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/baseline_circle_24"
+        android:drawableStart="@drawable/baseline_circle_24_black"
         android:drawablePadding="5dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/news_catcher"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="20sp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_feed1"
@@ -39,21 +39,40 @@
         app:layout_constraintTop_toBottomOf="@id/text_app_name"
         android:layout_marginTop="20dp"/>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_vieww"
+    <SearchView
+        android:id="@+id/search_view"
         android:layout_width="320dp"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recycler_view_feed1"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        app:queryHint="Search"/>
+
+    <TextView
+        android:id="@+id/langText"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="23dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:text="En"
+        android:drawableEnd="@drawable/baseline_circle_24"
+        android:background="@drawable/circle_button"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_feed2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_vieww"
+        app:layout_constraintTop_toBottomOf="@id/langText"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="20dp"/>
 
